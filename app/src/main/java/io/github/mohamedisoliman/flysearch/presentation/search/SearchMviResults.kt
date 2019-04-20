@@ -10,8 +10,9 @@ import io.github.mohamedisoliman.flysearch.presentation.mvi.MviResult
 sealed class SearchMviResults : MviResult {
   //  data class SearchResult()
   object Todo : SearchMviResults()
-
   object INFLIGHT : SearchMviResults()
+  data class SearchIsEnabled(val enabled: Boolean) : SearchMviResults()
+  object IDLE : SearchMviResults()
 
   data class OriginSuggestionsResult(val suggestions: List<Airport?>) : SearchMviResults()
   data class DestinationSuggestionsResult(val suggestions: List<Airport?>) : SearchMviResults()

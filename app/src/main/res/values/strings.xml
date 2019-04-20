@@ -2,4 +2,6 @@
     <string name="app_name">FlySearch</string>
   <string name="origin">Origin</string>
   <string name="destination">Destination</string>
+  <string name="pick_departure_date">Pick Departure date</string>
+  <string name="search">search</string>
 </resources>
