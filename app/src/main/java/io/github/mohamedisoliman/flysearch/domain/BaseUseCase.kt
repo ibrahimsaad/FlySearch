@@ -1,11 +1,12 @@
 package io.github.mohamedisoliman.flysearch.domain
 
+import io.github.mohamedisoliman.flysearch.presentation.mvi.MviResult
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-abstract class BaseUseCase<T, P>(
+abstract class BaseUseCase<T : MviResult, P>(
     private val subscribeOnScheduler: Scheduler = Schedulers.io(),
     private val observeOnScheduler: Scheduler = AndroidSchedulers.mainThread()
 ) {

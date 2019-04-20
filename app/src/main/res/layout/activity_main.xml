@@ -1,19 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.search.SearchActivity"
+    >
+
+  <include layout="@layout/fly_app_toolbar"/>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="8dp"
+      android:orientation="vertical"
+      tools:context=".presentation.search.SearchActivity"
+      >
+
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/origin_airport"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".presentation.search.SearchActivity">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/border"
+        android:hint="@string/origin"
+        android:padding="16dp"
+        android:textSize="18sp"
+        />
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></LinearLayout>
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/destination_airport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/origin_airport"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/border"
+        android:hint="@string/destination"
+        android:padding="16dp"
+        android:textSize="18sp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/search_flights"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/destination_airport"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_search_black_24dp"
+        />
+  </RelativeLayout>
+</LinearLayout>

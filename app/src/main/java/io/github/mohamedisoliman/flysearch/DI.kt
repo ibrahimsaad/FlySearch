@@ -3,7 +3,8 @@ package io.github.mohamedisoliman.flysearch
 import io.github.mohamedisoliman.flysearch.data.FlyRepository
 import io.github.mohamedisoliman.flysearch.data.Repository
 import io.github.mohamedisoliman.flysearch.data.remote.FlyApis
-import io.github.mohamedisoliman.flysearch.domain.SearchUseCase
+import io.github.mohamedisoliman.flysearch.domain.GetSuggestionsUseCase
+import io.github.mohamedisoliman.flysearch.domain.SearchFlightsUseCase
 import io.github.mohamedisoliman.flysearch.presentation.search.SearchViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -25,11 +26,12 @@ val dataModule = module {
 }
 
 val domainModule = module {
-    single { SearchUseCase(get()) }
+  single { SearchFlightsUseCase(get()) }
+  single { GetSuggestionsUseCase(get()) }
 }
 
 val presentationModule = module {
-    viewModel { SearchViewModel(get()) }
+  viewModel { SearchViewModel(get(), get()) }
 }
 
 

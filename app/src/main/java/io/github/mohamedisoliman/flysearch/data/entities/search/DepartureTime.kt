@@ -1,0 +1,14 @@
+package io.github.mohamedisoliman.flysearch.data.entities.search
+
+import com.squareup.moshi.Json
+
+data class DepartureTime(
+    @Json(name = "date")
+    val date: String?,
+    @Json(name = "gds")
+    val gds: String?,
+    @Json(name = "time")
+    val time: String?,
+    @Json(name = "zone")
+    val zone: String?
+)

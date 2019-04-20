@@ -1,7 +1,8 @@
 package io.github.mohamedisoliman.flysearch.data
 
-import io.github.mohamedisoliman.flysearch.data.entities.SearchBody
-import io.github.mohamedisoliman.flysearch.data.entities.SearchResponse
+import io.github.mohamedisoliman.flysearch.data.entities.search.SearchBody
+import io.github.mohamedisoliman.flysearch.data.entities.search.SearchResponse
+import io.github.mohamedisoliman.flysearch.data.entities.suggestion.CityResponse
 import io.reactivex.Observable
 import retrofit2.http.Body
 
@@ -11,5 +12,8 @@ import retrofit2.http.Body
  */
 interface Repository {
 
-    fun search(@Body searchBody: SearchBody): Observable<SearchResponse>
+  fun search(@Body searchBody: SearchBody): Observable<SearchResponse>
+
+  fun loadSuggestions(text: String): Observable<List<CityResponse>>
+
 }

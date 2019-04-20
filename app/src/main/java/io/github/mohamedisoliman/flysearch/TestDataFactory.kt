@@ -2,7 +2,7 @@ package io.github.mohamedisoliman.flysearch
 
 import androidx.annotation.VisibleForTesting
 import com.squareup.moshi.Moshi
-import io.github.mohamedisoliman.flysearch.data.entities.SearchBody
+import io.github.mohamedisoliman.flysearch.data.entities.search.SearchBody
 
 
 /**
@@ -29,7 +29,9 @@ fun searchBodyMock(): SearchBody {
 }
     """.trimIndent()
     val moshi = Moshi.Builder().build()
-    val jsonAdapter = moshi.adapter<SearchBody>(SearchBody::class.java)
+  val jsonAdapter = moshi.adapter<SearchBody>(
+      SearchBody::class.java
+  )
 
     return jsonAdapter.fromJson(json)
 }
