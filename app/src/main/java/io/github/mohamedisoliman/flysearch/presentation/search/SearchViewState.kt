@@ -1,6 +1,7 @@
 package io.github.mohamedisoliman.flysearch.presentation.search
 
 import io.github.mohamedisoliman.flysearch.data.entities.suggestion.Airport
+import io.github.mohamedisoliman.flysearch.domain.Flight
 import io.github.mohamedisoliman.flysearch.presentation.mvi.MviViewState
 
 /**
@@ -9,8 +10,11 @@ import io.github.mohamedisoliman.flysearch.presentation.mvi.MviViewState
  */
 sealed class SearchViewState : MviViewState {
   object INFLIGHT : SearchViewState()
+  data class FlightsResults(val flights: List<Flight>) : SearchViewState()
   object IDLE : SearchViewState()
-  data class SearchIsEnabled(val enabled: Boolean) : SearchViewState()
-  data class Suggestions(val suggestions: List<Airport?>) : SearchViewState()
+  sealed class Suggestions : SearchViewState() {
+    data class Origin(val data: List<Airport?>) : Suggestions()
+    data class Destination(val data: List<Airport?>) : Suggestions()
+  }
   data class ErrorHappened(val errorMessage: String) : SearchViewState()
 }

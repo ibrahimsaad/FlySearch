@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+  <LinearLayout
+      android:id="@+id/name_and_pic"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:orientation="vertical"
+      >
+    <TextView
+        android:id="@+id/carrier_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:maxLength="60"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        tools:layout_editor_absoluteX="8dp"
+        tools:text="Etihad Airways"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+      <ImageView
+          android:id="@+id/carrier_avatar"
+          android:layout_width="70dp"
+          android:layout_height="70dp"
+          android:layout_marginBottom="8dp"
+          android:layout_marginStart="8dp"
+          android:src="@drawable/ic_flight_takeoff_black_24dp"
+          tools:src="@tools:sample/avatars"
+          />
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="30dp"
+          android:orientation="vertical"
+          >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="8dp"
+              android:layout_marginStart="8dp"
+              android:maxLines="5"
+              android:text="@string/price"
+              android:textAppearance="@style/TextAppearance.AppCompat.Title"
+              android:textSize="20sp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              />
+
+          <TextView
+              android:id="@+id/flight_price"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="8dp"
+              android:maxLines="5"
+              android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+              android:textSize="20sp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              tools:text="4,957.40 NZD"
+              />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            >
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="8dp"
+              android:layout_marginStart="8dp"
+              android:maxLines="5"
+              android:text="@string/weight"
+              android:textAppearance="@style/TextAppearance.AppCompat.Title"
+              android:textSize="20sp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              />
+
+          <TextView
+              android:id="@+id/weight"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="8dp"
+              android:maxLines="5"
+              android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+              android:textSize="20sp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              tools:text="4,957.40 NZD"
+              />
+        </LinearLayout>
+
+      </LinearLayout>
+
+
+    </LinearLayout>
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:orientation="horizontal"
+      android:weightSum="3"
+      >
+
+    <TextView
+        android:id="@+id/take_off_time"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:drawableStart="@drawable/ic_flight_takeoff_black_24dp"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textSize="12sp"
+        tools:text="0"
+        />
+
+    <TextView
+        android:id="@+id/land_time"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:drawableStart="@drawable/ic_flight_land_black_24dp"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textSize="12sp"
+        tools:text="166"
+        />
+  </LinearLayout>
+
+
+</RelativeLayout>

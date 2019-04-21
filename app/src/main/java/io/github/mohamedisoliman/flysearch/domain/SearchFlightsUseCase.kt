@@ -14,7 +14,17 @@ class SearchFlightsUseCase(private val repository: Repository) :
 
   override fun buildUseCase(parameter: SearchBody): Observable<SearchMviResults> {
     return repository.search(parameter)
-        .map<SearchMviResults> { SearchMviResults.Todo }
+        .flatMapIterable { it.itineraries }
+        .map {
+          Flight(
+              it.carrier?.name, it.carrier?.code, "08:30", "20:00PM",//place holders :D
+              "${it.displayPricing?.total} ${it.displayPricing?.currencyCode}"
+              , "48KG"
+          )
+        }
+        .toList()
+        .toObservable()
+        .map { SearchMviResults.SearchFlights(it) }
   }
 
 }

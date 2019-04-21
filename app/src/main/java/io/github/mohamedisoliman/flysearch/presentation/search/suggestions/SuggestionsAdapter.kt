@@ -16,7 +16,7 @@ import io.github.mohamedisoliman.flysearch.data.entities.suggestion.Airport
 class SuggestionsAdapter(
   context: Context,
   private val resource: Int
-) : ArrayAdapter<Airport?>(context, resource) {
+) : ArrayAdapter<String?>(context, resource) {
 
   var data: List<Airport?> = mutableListOf()
     set(value) {
@@ -30,8 +30,8 @@ class SuggestionsAdapter(
     return data.size
   }
 
-  override fun getItem(position: Int): Airport? {
-    return data[position]
+  override fun getItem(position: Int): String? {
+    return data[position]?.fullName
   }
 
   override fun getView(

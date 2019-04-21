@@ -20,9 +20,6 @@ class GetSuggestionsUseCase(private val repository: Repository) : BaseUseCase<Se
         .toList()
         .toObservable()
         .cache()
-        .map { SearchMviResults.OriginSuggestionsResult(it) }
-        .cast(SearchMviResults::class.java)
-        .startWith(SearchMviResults.INFLIGHT)
-
+        .map { SearchMviResults.Suggestions(it) }
   }
 }

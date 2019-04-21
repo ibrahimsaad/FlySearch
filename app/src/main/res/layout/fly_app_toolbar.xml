@@ -29,18 +29,6 @@
         android:visibility="gone"
         style="@style/Base.Widget.AppCompat.ProgressBar"
         />
-
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/search_flights"
-        android:layout_width="36dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp"
-        android:indeterminate="true"
-        android:src="@drawable/ic_done_all_black_24dp"
-        android:tint="@color/white"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        />
   </RelativeLayout>
 
 </com.google.android.material.appbar.AppBarLayout>
